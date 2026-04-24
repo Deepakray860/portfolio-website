@@ -1,0 +1,168 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e8dede;
+  color: #311010;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+  background: #260f0f;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: #d7d2d2;
+  font-size: 1.5rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  color: rgb(247, 243, 243);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #00adb5;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  background: rgb(244, 239, 239);
+}
+.hero-text {
+  max-width: 400px;
+}
+.hero-text h2 {
+  font-size: 2rem;
+}
+.hero-text h2 span {
+  color: #00adb5;
+}
+.hero-image img {
+  width: 250px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #00adb5;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00adb5;
+}
+
+/* Projects */
+.project-card {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(3deg);
+}
+
+/* Contact Form */
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Typing Effect */
+.typewriter {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00adb5;
+  border-right: 2px solid #00adb5;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Scroll Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: #00adb5;
+  width: 0%;
+  z-index: 9999;
+}
+
+/* Scroll-triggered Animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+[data-animate].active {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-animate="fade-left"].active { transform: translateX(0); }
+[data-animate="fade-right"].active { transform: translateX(0); }
+[data-animate="zoom-in"].active { transform: scale(1); }
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
